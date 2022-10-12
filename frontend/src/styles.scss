@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+}
+
+.red {
+  color: "#006337";
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.msg-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.msg-error {
+  background-color: #e35e6b;
+  color: #fff;
+}
+
+@function rem-calc($size) {
+  $value: $size / 16;
+  @return #{$value}rem;
+}

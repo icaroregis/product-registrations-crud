@@ -1,0 +1,17 @@
+@import "../../../styles.scss";
+
+:host {
+  .home {
+    margin: 0 10px;
+
+    .title {
+      font-size: rem-calc(38);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: rem-calc(16);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+:host {
+  .container {
+    background-color: #fff;
+
+    .sidenav {
+      background-color: #3f51b5;
+      width: 200px;
+
+      a {
+        color: #fff;
+
+        i {
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .content-master {
+      overflow: hidden;
+      padding: 10px 0;
+
+      .content {
+        padding: 16px;
+      }
+    }
+  }
+}
