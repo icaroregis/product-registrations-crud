@@ -1,6 +1,6 @@
 //modules
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,12 +21,20 @@ import { HeaderComponent } from './components/templates/header/header.component'
 import { FooterComponent } from './components/templates/footer/footer.component';
 import { NavegacaoComponent } from './components/templates/navegacao/navegacao.component';
 import { HomeComponent } from './views/home/home.component';
-import { CadastroDeProdutosComponent } from './views/cadastro-de-produtos/cadastro-de-produtos.component';
+import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 
 //diretivas
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { registerLocaleData } from '@angular/common';
+import LocalePt from '@angular/common/locales/pt';
+
+registerLocaleData(LocalePt);
 
 @NgModule({
   declarations: [
@@ -35,10 +43,11 @@ import { ProductCreateComponent } from './components/product/product-create/prod
     FooterComponent,
     NavegacaoComponent,
     HomeComponent,
-    CadastroDeProdutosComponent,
+    ProductCrudComponent,
     RedDirective,
     ForDirective,
     ProductCreateComponent,
+    ProductReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,9 +64,12 @@ import { ProductCreateComponent } from './components/product/product-create/prod
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   exports: [MatFormFieldModule, MatInputModule],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

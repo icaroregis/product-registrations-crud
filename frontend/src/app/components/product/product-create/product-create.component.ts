@@ -23,18 +23,20 @@ export class ProductCreateComponent implements OnInit {
   });
 
   public createProduct(): void {
+    const treatedNumber = this.fg.get('productPrice')?.value.replace(',', '.');
+
     const object = {
       name: this.fg.get('productName')?.value,
-      price: this.fg.get('productPrice')?.value,
+      price: treatedNumber,
     };
 
     this.productService.create(object).subscribe(() => {
       this.productService.showMessage('Produto criado com sucesso!');
-      this.route.navigate(['cadastro-de-produtos']);
+      this.route.navigate(['crud-de-produtos']);
     });
   }
 
   public cancel(): void {
-    this.route.navigate(['cadastro-de-produtos']);
+    this.route.navigate(['crud-de-produtos']);
   }
 }
