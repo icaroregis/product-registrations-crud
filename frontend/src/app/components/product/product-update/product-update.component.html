@@ -1,0 +1,21 @@
+<mat-card class="container mat-elevation-z3">
+  <mat-card-title>Alterar Produto</mat-card-title>
+
+  <form [formGroup]="fg">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Nome do Produto" formControlName="productName" name="productName" [(ngModel)]="getProduct.name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Preço do Produto (R$)" formControlName="productPrice" name="productPrice" [(ngModel)]="getProduct.price">
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)="updateProduct()">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>
+</mat-card>

@@ -1,15 +1,17 @@
-table {
+.table {
   width: 100%;
-}
 
-.edit {
-  margin-right: 10px;
-}
+  .edit {
+    margin-right: 13px;
 
-.edit > i {
-  color: #d9cd26;
-}
+    .iconEdit {
+      color: #d9cd26;
+    }
+  }
 
-.delete > i {
-  color: #e35e6b;
+  .delete {
+    .iconDelete {
+      color: #e35e6b;
+    }
+  }
 }

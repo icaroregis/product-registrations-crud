@@ -1,5 +1,5 @@
 <div class="mat-elevation-z4">
-  <table mat-table class="" [dataSource]="lstProducts">
+  <table mat-table class="table" [dataSource]="lstProducts">
     <!-- Id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -16,6 +16,20 @@
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef>Preço</th>
       <td mat-cell *matCellDef="let row">{{ number(row.price) | currency: "BRL" }} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="acoes" class="acoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <a [routerLink]="['/atualizar-produtos', row.id ]" class="edit">
+          <i class="material-icons iconEdit">edit</i>
+        </a>
+
+        <a routerLink="" class="delete">
+          <i class="material-icons iconDelete">delete</i>
+        </a>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
