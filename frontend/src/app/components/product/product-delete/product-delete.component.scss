@@ -1,0 +1,19 @@
+:host {
+  .container {
+    margin: 0 10px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 10px, 20px;
+
+      .ng-invalid {
+        color: rgb(161, 161, 161);
+      }
+    }
+
+    button {
+      margin: 20px 15px 0px 0px;
+    }
+  }
+}

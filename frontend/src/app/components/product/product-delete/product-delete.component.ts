@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Product } from '../product.model';
 
 @Component({
-  selector: 'app-product-update',
-  templateUrl: './product-update.component.html',
-  styleUrls: ['./product-update.component.scss'],
+  selector: 'app-product-delete',
+  templateUrl: './product-delete.component.html',
+  styleUrls: ['./product-delete.component.scss'],
 })
-export class ProductUpdateComponent implements OnInit {
+export class ProductDeleteComponent implements OnInit {
   public getProduct: Product | any;
 
   constructor(
@@ -24,8 +24,8 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   public fg: FormGroup = this.fb.group({
-    productName: ['', Validators.required],
-    productPrice: ['', Validators.required],
+    productName: [''],
+    productPrice: [''],
   });
 
   public getById() {
@@ -42,11 +42,11 @@ export class ProductUpdateComponent implements OnInit {
     });
   }
 
-  public updateProduct() {
-    this.productService.update(this.getProduct).subscribe({
+  public deleteProduct() {
+    this.productService.delete(this.getProduct.id).subscribe({
       next: (response) => {
         if (response) {
-          this.productService.showMessage('Produto atualizado com sucesso!');
+          this.productService.showMessage('Produto excluído com sucesso!');
           this.route.navigate(['crud-de-produtos']);
         }
       },
