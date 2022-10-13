@@ -2,13 +2,18 @@
   "products": [
     {
       "name": "Lapis Preto Básico Fábrica Castell",
-      "price": "1.50",
-      "id": 4
+      "price": "2.50",
+      "id": 1
     },
     {
       "name": "Computador Dell Inspiron 4776 i7 8gb memoria ram",
-      "price": "7840.90",
-      "id": 5
+      "price": "4567.99",
+      "id": 2
+    },
+    {
+      "name": "Redmi Note11",
+      "price": "1645.66",
+      "id": 3
     }
   ]
 }

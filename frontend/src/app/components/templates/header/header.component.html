@@ -4,6 +4,11 @@
   </a>
 
   <span>
-    <a href="">Início</a>
+    <a routerLink="{{ getRouterUrl() }}">
+      <i class="material-icons icon">
+        {{ getIcon() }}
+      </i>
+      {{ getTitle() }}
+    </a>
   </span>
 </mat-toolbar>
