@@ -22,6 +22,15 @@ export class ProductService {
     });
   }
 
+  errorShowMessage(msg: string) {
+    this.snackBar.open(msg, 'Fechar', {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['msg-error'],
+    });
+  }
+
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product).pipe(
       map((obj) => obj),

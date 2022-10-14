@@ -23,8 +23,14 @@ export class ProductCreateComponent implements OnInit {
   });
 
   public createProduct(): void {
-    const treatedNumber = this.fg.get('productPrice')?.value.replace(',', '.');
+    if (this.fg.invalid) {
+      this.productService.errorShowMessage(
+        'Por gentileza, é necessário preencher todos os campos!'
+      );
+      return;
+    }
 
+    const treatedNumber = this.fg.get('productPrice')?.value.replace(',', '.');
     const object = {
       name: this.fg.get('productName')?.value,
       price: treatedNumber,
