@@ -39,7 +39,7 @@ export class ProductService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true);
+    this.showMessage('Ocorreu um erro! Servidor esta fora do ar!', true);
     return EMPTY;
   }
 
